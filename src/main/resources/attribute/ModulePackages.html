@@ -1,0 +1,8 @@
+<div class="ModulePackages">
+	<h4>ModulePackages</h4>
+	<div class="package_index">
+	{% for package in box(package_index) %}
+		<div class="package"><span>#{{ package }}: </span><span>{{ package |R }}</span></div>
+	{% endfor %}
+	</div>
+</div>

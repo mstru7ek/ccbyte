@@ -1,0 +1,133 @@
+
+body {
+    background-color: #fff;
+}
+
+/** methods */
+
+section.field_info ,
+section.method_info {
+    margin: 10px;
+    border: 1px solid #000;
+    padding: 10px ;
+    padding: 5px;
+}
+
+section.field_info > h4,
+section.method_info > h4 {
+    color: #a00031;
+    margin: 0px 0px;
+
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border: 1px solid #000;
+    color: #000;
+    text-align: center;
+    font-size: 18px ;
+}
+
+p,
+span,
+h4 {
+    margin: 10px;
+}
+
+/** header */
+header {
+    margin: 10px;
+    border: 1px solid #000;
+}
+
+header table tr > td:nth-child(1) { width: 120px; }
+
+
+header table { border-color: #dc3545; }
+
+/** sections */
+
+
+section {
+    margin: 10px;
+    border: 1px solid #000;
+}
+
+p,
+td {
+    word-break:break-all;
+}
+
+table {
+    margin: 10px;
+    border: 1px solid #fff;
+}
+
+table tr > td:nth-child(1) {
+    text-align: right;
+}
+
+section.ConstPool table { border-color: #8B008B; }
+
+section.ConstPool table tr > td:nth-child(1) { width: 50px; }
+section.ConstPool table tr > td:nth-child(2) { width: 120px; }
+section.ConstPool table tr > td:nth-child(3) { width: 400px; }
+section.ConstPool table tr > td:nth-child(4) {  }
+
+section.field_info > table tr > td:nth-child(1) { width: 120px; }
+section.field_info > table { width: 600px; border-color: #dc3545;  }
+
+section.method_info > table tr > td:nth-child(1) { width: 120px; }
+section.method_info > table { width: 600px; border-color: #007bff; }
+
+
+section.LineNumberTable table {
+    width: 100px;
+}
+
+section.LocalVariableTable table {
+    width: 500px;
+}
+
+
+section.LocalVariableTable table tr > th:nth-child(1),
+section.LocalVariableTable table tr > th:nth-child(2),
+section.LocalVariableTable table tr > th:nth-child(3),
+section.LocalVariableTable table tr > th:nth-child(4),
+section.LocalVariableTable table tr > td:nth-child(1),
+section.LocalVariableTable table tr > td:nth-child(2),
+section.LocalVariableTable table tr > td:nth-child(3),
+section.LocalVariableTable table tr > td:nth-child(4) {
+    text-align: right;
+}
+
+section.LocalVariableTable table tr > th:nth-child(5),
+section.LocalVariableTable table tr > td:nth-child(5) {
+    text-align: left;
+}
+
+section.StackMapTable table {
+    width: 700px;
+}
+
+section.StackMapTable table tr > td:nth-child(1) { width: 90px; }
+section.StackMapTable table tr > td:nth-child(4) { width: 100px; }
+
+section.StackMapTable table tr > td:nth-child(1),
+section.StackMapTable table tr > td:nth-child(2),
+section.StackMapTable table tr > td:nth-child(3) {
+    text-align: left;
+}
+
+section.StackMapTable table tr > th:nth-child(4),
+section.StackMapTable table tr > th:nth-child(5),
+section.StackMapTable table tr > th:nth-child(6),
+section.StackMapTable table tr > td:nth-child(4),
+section.StackMapTable table tr > td:nth-child(5),
+section.StackMapTable table tr > td:nth-child(6) {
+    text-align: right;
+}
+
+section.BootstrapMethods div > p { margin-left: 30px; }
+section.BootstrapMethods div > p:nth-child(2) { margin-left: 20px; }
+section.BootstrapMethods div > p:nth-child(1) { margin-left: 10px; }

@@ -1,0 +1,19 @@
+<section class="LocalVariableTypeTable">
+	<h4>LocalVariableTypeTable</h4>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Start</th>
+				<th>Length</th>
+				<th>Slot</th>
+				<th>Name</th>
+				<th>Signature</th>
+			</tr>
+		</thead>
+			{% for local_variable_type_info in local_variable_type_table %}
+				{% dispatch local_variable_type_info %}
+			{% endfor %}
+		</tbody>
+	</table>
+</section>

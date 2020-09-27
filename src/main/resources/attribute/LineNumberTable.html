@@ -1,0 +1,11 @@
+<section class="LineNumberTable">
+	<h4>LineNumberTable</h4>
+
+	<table>
+		<tbody>
+			{% for line_info in line_number_table %}
+				{% dispatch line_info %}
+			{% endfor %}
+		</tbody>
+	</table>
+</section>

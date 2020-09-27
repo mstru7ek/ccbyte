@@ -1,0 +1,15 @@
+<section class="field_info">
+    <h4>F</h4>
+
+    <table>
+        <tbody>
+            <tr class="name_index"><td>name: </td> <td>{{ name_index |R }}</td></tr>
+            <tr class="access_flags"><td>flags: </td> <td>{{ access_flags |FlagF }}</td></tr>
+            <tr class="descriptor_index"><td>descriptor: </td> <td>{{ descriptor_index |R }}</td></tr>
+        </tbody>
+    </table>
+
+    {% for att in attributes %}
+        {% dispatch att %}
+    {% endfor %}
+</section>

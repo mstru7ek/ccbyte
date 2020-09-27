@@ -1,0 +1,16 @@
+<tr>
+	<td>frame_type =</td>
+	<td>{{ uint(frame_type) }}</td>
+	<td>full_frame</td>
+	<td>{{ offset_delta }}</td>
+	<td>[
+		{% for verification_type_info in locals %}
+		{% dispatch verification_type_info %} ,
+		{% endfor %}
+		]</td>
+	<td>[
+		{% for verification_type_info in stack %}
+		{% dispatch verification_type_info %},
+		{% endfor %}
+		]</td>
+</tr>

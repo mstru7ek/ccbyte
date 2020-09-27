@@ -1,0 +1,17 @@
+<div class="Code">
+	<h4>Code</h4>
+	<div class="max_stack"><span>max_stack: </span><span>{{ max_stack }}</span></div>
+	<div class="max_locals"><span>max_locals: </span><span>{{ max_locals }}</span></div>
+	<div class="code">
+	</div>
+	<div class="exception_table">
+	{% for exception_info in exception_table %}
+		{% dispatch exception_info %}
+	{% endfor %}
+	</div>
+	<div class="attributes">
+	{% for attribute_info in attributes %}
+		{% dispatch attribute_info %}
+	{% endfor %}
+	</div>
+</div>

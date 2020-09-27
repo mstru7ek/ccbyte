@@ -1,0 +1,9 @@
+<div>
+    <p><b>{{ loop.getIndex0() }}: #{{ bootstrap_method_ref }} {{bootstrap_method_ref |R }}</b></p>
+
+    <p>Method Arguments:</p>
+    {% for bootstrap_argument in box(bootstrap_arguments) %}
+        <p>#{{ bootstrap_argument }} {{ bootstrap_argument |R }}</p>
+    {% endfor %}
+</div>
+

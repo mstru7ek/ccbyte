@@ -1,0 +1,23 @@
+<section class="StackMapTable">
+	<h4>StackMapTable</h4>
+
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th>offset_delta</th>
+				<th>locals</th>
+				<th>stack</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for stack_map_frame in entries %}
+			{% dispatch stack_map_frame %}
+		{% endfor %}
+		</tbody>
+	</table>
+
+
+</section>

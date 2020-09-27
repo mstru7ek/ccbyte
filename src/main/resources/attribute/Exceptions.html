@@ -1,0 +1,11 @@
+<section class="Exceptions">
+	<h4>Exceptions</h4>
+
+	{% if exception_index_table %}
+	<p>throws
+		{% for exception in box(exception_index_table) %}
+			{{ exception |R }},
+		{% endfor %}
+	</p>
+	{% endif %}
+</section>

@@ -1,0 +1,9 @@
+<div class="array_value">
+    <h4>array_value</h4>
+    <div class="num_values"><span>num_values: </span><span>{{ num_values }}</span></div>
+    <div class="values">
+    {% for element_value in values %}
+        {% dispatch element_value %}
+    {% endfor %}
+    </div>
+</div>

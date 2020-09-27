@@ -1,0 +1,10 @@
+<div class="export_element">
+	<h4>export_element</h4>
+	<div class="exports_index"><span>exports_index: </span><span>{{ exports_index |R }}</span></div>
+	<div class="exports_flags"><span>exports_flags: </span><span>{{ exports_flags |FlagMD }}</span></div>
+	<div class="exports_to_index">
+	{% for export_to_module in box(exports_to_index) %}
+		<div class="export_to_module"><span>#{{ export_to_module }}: </span><span>{{ export_to_module |R }}</span></div>
+	{% endfor %}
+	</div>
+</div>

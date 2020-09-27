@@ -1,0 +1,9 @@
+<div class="localvar_target">
+	<h4>localvar_target</h4>
+	<div class="table_length"><span>table_length: </span><span>{{ table_length }}</span></div>
+	<div class="table">
+	{% for table_entry in table %}
+	{% dispatch  table_entry %}
+	{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,10 @@
+{% if path %}
+<div class="type_path">
+	<h4>type_path</h4>
+	<div class="path">
+	{% for path_element in path %}
+		{% dispatch path_element %}
+	{% endfor %}
+	</div>
+</div>
+{% endif %}

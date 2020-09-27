@@ -1,0 +1,11 @@
+<section class="InnerClasses">
+    <h4>InnerClasses</h4>
+
+    <table>
+        <tbody>
+            {% for inner_class_info in classes %}
+                {% dispatch inner_class_info %}
+            {% endfor %}
+        </tbody>
+    </table>
+</section>

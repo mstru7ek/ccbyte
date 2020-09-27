@@ -1,0 +1,20 @@
+<section class="LocalVariableTable">
+	<h4>LocalVariableTable</h4>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Start</th>
+				<th>Length</th>
+				<th>Slot</th>
+				<th>Name</th>
+				<th>Signature</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for line_number_info in local_variable_table %}
+				{% dispatch line_number_info %}
+			{% endfor %}
+		</tbody>
+	</table>
+</section>

@@ -1,0 +1,11 @@
+<div class="throws_target_annotation">
+	<h4>throws_target_annotation</h4>
+	<div class="target_info">{% dispatch target_info %}</div>
+	<div class="target_path">{% dispatch target_path %}</div>
+	<div class="type_index"><span>#{{ type_index }} : </span><span>{{ type_index |R }}</span></div>
+	<div class="element_value_pairs">
+	{% for element_value_pair in element_value_pairs %}
+	{% dispatch  element_value_pair %}
+	{% endfor %}
+	</div>
+</div>

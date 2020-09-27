@@ -1,0 +1,9 @@
+<div class="provide_element">
+	<h4>provide_element</h4>
+	<div class="provides_index"><span>provides_index: </span><span>{{ provides_index |R }}</span></div>
+	<div class="provides_with_index">
+	{% for provides_with in box(provides_with_index) %}
+		<div class="provides_with"><span>#{{ provides_with }} : </span><span>{{ provides_with |R }}</span></div>
+	{% endfor %}
+	</div>
+</div>

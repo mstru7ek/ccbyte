@@ -1,0 +1,10 @@
+<div class="open_element">
+	<h4>open_element</h4>
+	<div class="opens_index"><span>opens_index: </span><span>{{ opens_index |R }}</span></div>
+	<div class="opens_flags"><span>opens_flags: </span><span>{{ opens_flags |FlagMD }}</span></div>
+	<div class="opens_to_index">
+	{% for open_to_module in box(opens_to_index) %}
+		<div class="open_to_module"><span>#{{ open_to_module }} : </span><span>{{ open_to_module |R }}</span></div>
+	{% endfor %}
+	</div>
+</div>

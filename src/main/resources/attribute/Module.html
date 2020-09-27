@@ -1,0 +1,36 @@
+<div class="Module">
+	<h4>Module</h4>
+	<div class="module_name_index"><span>module_name_index: </span><span>{{ module_name_index |R }}</span></div>
+	<div class="module_flags"><span>module_flags: </span><span>{{ module_flags |FlagD }}</span></div>
+	<div class="module_version_index"><span>module_version_index: </span><span>{{ module_version_index |R }}</span></div>
+
+	<div class="requires">
+	{% for require_element in requires %}
+		{% dispatch require_element %}
+	{% endfor %}
+	</div>
+
+	<div class="exports">
+	{% for export_element in exports %}
+		{% dispatch export_element %}
+	{% endfor %}
+	</div>
+
+	<div class="opens">
+	{% for open_element in opens %}
+		{% dispatch open_element %}
+	{% endfor %}
+	</div>
+
+	<div class="uses_index">
+	{% for uses in box(uses_index) %}
+		<div class="uses"><span>#{{ uses }}: </span><span>{{ uses |R }}</span></div>
+	{% endfor %}
+	</div>
+
+	<div class="provides">
+	{% for provide_element in provides %}
+		{% dispatch provide_element %}
+	{% endfor %}
+	</div>
+</div>
