@@ -11,7 +11,7 @@
 
 
 ### Implementation compliance 
-Compliance with JVM Specification Java SE 14 / dissasembler
+Compliance with JVM Specification Java SE 14 / disassembler
     
      +  done
      %  waiting 
