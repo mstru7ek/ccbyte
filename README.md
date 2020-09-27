@@ -1,8 +1,10 @@
 # ccbyte
 Byte Code Viewer
 
-- render html byte code view from .class file
-- full structer rendered with java reflection api
-- additional customization with css
+- render html byte code view from a .class file.
+- full structer rendered with reflection api.
+- additional customizations via css.
 
-![Image test](assets/Sbt-logo.svg)
+![header and const pool](assets/ccbyte_1.jpg)
+
+![method info ](assets/ccbyte_2.jpg)
