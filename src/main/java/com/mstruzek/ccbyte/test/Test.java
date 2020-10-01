@@ -73,6 +73,10 @@ public class Test {
     }
   }
 
+  public int mx(int i, int w, int z, int q , int r, int y, int u,int k, int l) {
+    return i + w +z + q + r +y + u +k + l;
+  }
+
   @TestDenat(value = "asdf", part = Part.NIGHT)
   public void sprawdzenie_adnotacji(){
     return;
