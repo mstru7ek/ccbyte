@@ -81,6 +81,12 @@ section.method_info > table tr > td:nth-child(1) { width: 120px; }
 section.method_info > table { width: 600px; border-color: #007bff; }
 
 
+section.Code .code > table { border-color: #8B008B; }
+section.Code .code > table tr > td:nth-child(1) { width: 50px; padding-right: 10px }
+section.Code .code > table tr > td:nth-child(2) { width: 120px; }
+section.Code .code > table tr > td:nth-child(3) { width: 150px; }
+section.Code .code > table tr > td:nth-child(4) { width: 500px; }
+
 section.LineNumberTable table {
     width: 100px;
 }

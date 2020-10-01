@@ -21,7 +21,10 @@ class RFilter implements Filter {
     if (varr == null) {
       return null;
     }
-    if (varr instanceof Short) {
+    if (varr instanceof Byte) {
+      var value = constPool.resolve((byte) varr);
+      return TemplateUtils.escapeHTML(value);
+    } else  if (varr instanceof Short) {
       var value = constPool.resolve((short) varr);
       return TemplateUtils.escapeHTML(value);
     }

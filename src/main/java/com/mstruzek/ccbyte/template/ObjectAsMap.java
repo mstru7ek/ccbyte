@@ -10,9 +10,25 @@ public class ObjectAsMap implements Map<String, Object> {
   private final Object context;
   private final String className;
 
+  private final Map<String, Object> baseContext;
+
   private ObjectAsMap(Object context) {
     this.context = context;
     this.className = context.getClass().getSimpleName();
+    this.baseContext = registerBaseContext();
+  }
+
+  private Map<String, Object> registerBaseContext() {
+    var base = new HashMap<String, Object>();
+    base.put("$className", clearName(this.className));
+    base.put("$superName", this.context.getClass().getSuperclass().getSimpleName());
+    return base;
+  }
+
+  public static String clearName(String className) {
+    if (className.endsWith("_"))
+      return className.substring(0, className.length()-1);
+    return className;
   }
 
   public static ObjectAsMap wrap(Object context) {
@@ -42,8 +58,12 @@ public class ObjectAsMap implements Map<String, Object> {
   @Override
   public Object get(Object key) {
     String keyValue = (String) key;
+    var baseObject = baseContext.get(keyValue);
+    if (baseObject != null)
+      return baseObject;
     try {
-      Field declaredField = Arrays.stream(getClassFields(context.getClass()))
+      Field declaredField = Arrays
+          .stream(getClassFields(context.getClass()))
           .filter(field -> field.getName().equals(keyValue))
           .findFirst().get();
       declaredField.setAccessible(true);
@@ -95,6 +115,7 @@ public class ObjectAsMap implements Map<String, Object> {
         e.printStackTrace();
       }
     }
+    entries.addAll(baseContext.entrySet());
     return entries;
   }
   public static Field[] getClassFields(Class klass) {

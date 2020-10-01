@@ -19,8 +19,8 @@ public interface constants {
   @Discriminator(byteValue = 0x0d) class fconst_2 extends op_code {}
   @Discriminator(byteValue = 0x0e) class dconst_0 extends op_code {}
   @Discriminator(byteValue = 0x0f) class dconst_1 extends op_code {}
-  @Discriminator(byteValue = 0x10) class bipush extends op_code { public byte byte_; }
-  @Discriminator(byteValue = 0x11) class sipush extends op_code {}
+  @Discriminator(byteValue = 0x10) class bipush extends op_code { public byte value; }
+  @Discriminator(byteValue = 0x11) class sipush extends op_code { public short value; }
   @Discriminator(byteValue = 0x12) class ldc extends op_code { public byte index;}
   @Discriminator(byteValue = 0x13) class ldc_w extends op_code { public short index;}
   @Discriminator(byteValue = 0x14) class ldc2_w extends op_code { public short index;}

@@ -2,6 +2,7 @@ package com.mstruzek.ccbyte.template;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -24,16 +25,25 @@ public final class TemplateUtils {
   }
 
   private static String doLoadTemplate(Class<?> templateClass) {
-    var file = templateClass.getName().substring("com.mstruzek.ccbyte".length() + 1).replace(".", "/").concat(".html");
+    var file = getFileName(templateClass);
     try {
-      var resource = ClassLoader.getSystemClassLoader().getResource(file);
-      Objects.requireNonNull(resource, String.format("resource not found: %s", file));
+      URL resource = ClassLoader.getSystemClassLoader().getResource(file);
+      if (resource == null) {
+        resource = ClassLoader.getSystemClassLoader().getResource(getFileName(templateClass.getSuperclass()));
+        if (resource == null) {
+          throw new RuntimeException(String.format("resource not found: %s", file));
+        }
+      }
       var path = Paths.get(resource.toURI());
       return Files.readString(path);
     } catch (URISyntaxException | IOException e) {
       e.printStackTrace();
       throw new RuntimeException(e);
     }
+  }
+
+  private static String getFileName(Class<?> templateClass) {
+    return templateClass.getName().substring("com.mstruzek.ccbyte".length() + 1).replace(".", "/").replace("$", "/").concat(".html");
   }
 
   public static Object[] box(Object object) {

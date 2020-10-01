@@ -15,6 +15,7 @@ import java.util.function.Function;
 
 public class Test {
 
+  public static final String nieboraki = "nie bo raki";
   public class Dzieciaki {
     public static final String nieboraki = "nie bo raki";
 
@@ -58,6 +59,8 @@ public class Test {
 
   static Integer w;
   public static void main(String[] args) {
+
+    System.out.println(nieboraki);
 
     int z = 10;
 
