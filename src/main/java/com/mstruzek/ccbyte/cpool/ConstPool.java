@@ -1,9 +1,9 @@
 package com.mstruzek.ccbyte.cpool;
 
-import com.mstruzek.ccbyte.core.Descriptor;
-import com.mstruzek.ccbyte.core.ValueMatcher;
 import com.mstruzek.ccbyte.annotation.ArrayLength;
 import com.mstruzek.ccbyte.annotation.Discriminator;
+import com.mstruzek.ccbyte.core.Descriptor;
+import com.mstruzek.ccbyte.core.ValueMatcher;
 import com.mstruzek.ccbyte.matcher.ByteEqualValueMatcher;
 
 import java.lang.reflect.Field;

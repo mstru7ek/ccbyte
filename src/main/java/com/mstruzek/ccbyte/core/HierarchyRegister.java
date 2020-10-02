@@ -64,35 +64,35 @@ public class HierarchyRegister {
     registerBase(attribute_info.class);
     registerConverter(attribute_info.class, (tag) -> constPool.resolve((short) tag));
 
-    registerSubClass(ConstantValue.class);
+    registerSubClass(AnnotationDefault.class);
+    registerSubClass(BootstrapMethods.class);
     registerSubClass(Code.class);
-    registerSubClass(StackMapTable.class);
+    registerSubClass(ConstantValue.class);
+    registerSubClass(Deprecated.class);
+    registerSubClass(EnclosingMethod.class);
     registerSubClass(Exceptions.class);
     registerSubClass(InnerClasses.class);
-    registerSubClass(EnclosingMethod.class);
-    registerSubClass(Synthetic.class);
-    registerSubClass(Signature.class);
-    registerSubClass(SourceFile.class);
-    registerSubClass(SourceDebugExtension.class);
     registerSubClass(LineNumberTable.class);
     registerSubClass(LocalVariableTable.class);
     registerSubClass(LocalVariableTypeTable.class);
-    registerSubClass(Deprecated.class);
-    registerSubClass(RuntimeVisibleAnnotations.class);
-    registerSubClass(RuntimeInvisibleAnnotations.class);
-    registerSubClass(RuntimeVisibleParameterAnnotations.class);
-    registerSubClass(RuntimeInvisibleParameterAnnotations.class);
-    registerSubClass(RuntimeVisibleTypeAnnotations.class);
-    registerSubClass(RuntimeInvisibleTypeAnnotations.class);
-    registerSubClass(RuntimeInvisibleTypeAnnotations.class);
-    registerSubClass(AnnotationDefault.class);
-    registerSubClass(BootstrapMethods.class);
     registerSubClass(MethodParameters.class);
     registerSubClass(Module.class);
-    registerSubClass(ModulePackages.class);
     registerSubClass(ModuleMainClass.class);
+    registerSubClass(ModulePackages.class);
     registerSubClass(NestHost.class);
     registerSubClass(NestMembers.class);
+    registerSubClass(RuntimeInvisibleAnnotations.class);
+    registerSubClass(RuntimeInvisibleParameterAnnotations.class);
+    registerSubClass(RuntimeInvisibleTypeAnnotations.class);
+    registerSubClass(RuntimeInvisibleTypeAnnotations.class);
+    registerSubClass(RuntimeVisibleAnnotations.class);
+    registerSubClass(RuntimeVisibleParameterAnnotations.class);
+    registerSubClass(RuntimeVisibleTypeAnnotations.class);
+    registerSubClass(Signature.class);
+    registerSubClass(SourceDebugExtension.class);
+    registerSubClass(SourceFile.class);
+    registerSubClass(StackMapTable.class);
+    registerSubClass(Synthetic.class);
 
     // ---- end Attributes ----
 

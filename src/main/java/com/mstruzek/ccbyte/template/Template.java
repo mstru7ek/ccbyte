@@ -16,6 +16,7 @@ public class Template {
     jinjava.registerFilter(new Utf8Filter());
     jinjava.registerFilter(new RFilter(classFileLoader.constantPool()));
     jinjava.registerFilter(new TFilter(classFileLoader.constantPool()));
+    jinjava.registerFilter(new PTFilter());
     jinjava.registerFilter(new RefKindFilter());
 
     jinjava.registerFilter(FlagsFilter.from(Flags.Class.class, "C"));

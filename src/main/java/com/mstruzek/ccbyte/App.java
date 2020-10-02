@@ -14,6 +14,7 @@ public class App {
   public static void main(String[] args) throws IOException, URISyntaxException, NoSuchFieldException {
 
     var resourcePath = Paths.get(ClassLoader.getSystemClassLoader().getResource("com/mstruzek/ccbyte/test/Test.class").toURI());
+//    var resourcePath = Paths.get(ClassLoader.getSystemClassLoader().getResource("com/mstruzek/ccbyte/test/T1.class").toURI());
     ClassFileLoader classFileLoader = new ClassFileLoader(resourcePath);
     classFileLoader.read();
 

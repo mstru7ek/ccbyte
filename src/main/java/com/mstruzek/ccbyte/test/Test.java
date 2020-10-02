@@ -16,6 +16,7 @@ import java.util.function.Function;
 public class Test {
 
   public static final String nieboraki = "nie bo raki";
+
   public class Dzieciaki {
     public static final String nieboraki = "nie bo raki";
 
@@ -42,7 +43,6 @@ public class Test {
     public void koloseum() {
 
 
-
     }
   }
 
@@ -58,6 +58,7 @@ public class Test {
 
 
   static Integer w;
+
   public static void main(String[] args) {
 
     System.out.println(nieboraki);
@@ -66,46 +67,68 @@ public class Test {
 
     if (z < 12) {
       w = z;
-    } else if (z < 20){
+    } else if (z < 20) {
       w = z + 1;
     } else {
       w = -1;
     }
   }
 
-  public int mx(int i, int w, int z, int q , int r, int y, int u,int k, int l) {
-    return i + w +z + q + r +y + u +k + l;
+  public int mx(int i, int w, int z, int q, int r, int y, int u, int k, int l) {
+    return i + w + z + q + r + y + u + k + l;
   }
 
   @TestDenat(value = "asdf", part = Part.NIGHT)
-  public void sprawdzenie_adnotacji(){
+  public void sprawdzenie_adnotacji() {
     return;
   }
 
 
-  public static class Winner {}
+  public static class Winner {
+  }
 
 
   @Target(value = {ElementType.ANNOTATION_TYPE, ElementType.TYPE_USE})
   @Retention(RetentionPolicy.RUNTIME)
-  public @interface Who {}
+  public @interface Who {
+  }
 
+
+  public class DD implements Function<Integer, Integer> {
+
+    @Override
+    public Integer apply(Integer integer) {
+      return null;
+    }
+  }
 
   public void mm(int k) throws IOException, IllegalAccessError {
+    int[] kk = new int[]{1, 2, 10};
+    w = ++k + kk[1];
 
-    class Enclosing {
-    }
+    Function<Integer, Integer> zzz = x -> x +1;
+    Function<Integer, Integer> zzz2= x -> x +2;
+
+    zzz.apply(10);
+    zzz2.apply(12);
+
+    String[][][] strings = new String[3][4][4];
+    strings[1][1][1] = "asdf";
+
+    // alob strings albo lookupswitch , gdzie jest przesuniecie.// FIXME BUG
+
+    // FIXME - nieprawidlowe paddowanie !!!!!
 
     // lookupswitch
-    switch (k) {
-      case 120:
-        break;
-      case 230:
-        break;
-      case 1500:
-        break;
-      default:
-          return;
-    }
+//    switch (k) {
+//      case 120:
+//        break;
+//      case 230:
+//        break;
+//      case 1500:
+//        break;
+//      default:
+//        return;
+//    }
   }
 }

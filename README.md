@@ -48,3 +48,6 @@ Compliance with JVM Specification Java SE 14 / disassembler
 | StackMapTable                            |   +   |              
 | Synthetic                                |   +   |          
 
+
+# Bug
+ - lookupswitch  [ PADding ]

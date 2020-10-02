@@ -22,7 +22,7 @@ class RFilter implements Filter {
       return null;
     }
     if (varr instanceof Byte) {
-      var value = constPool.resolve((byte) varr);
+      var value = constPool.resolve(((Byte) varr).shortValue());
       return TemplateUtils.escapeHTML(value);
     } else  if (varr instanceof Short) {
       var value = constPool.resolve((short) varr);
