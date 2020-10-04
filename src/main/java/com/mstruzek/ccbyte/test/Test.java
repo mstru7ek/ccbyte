@@ -106,8 +106,8 @@ public class Test {
     int[] kk = new int[]{1, 2, 10};
     w = ++k + kk[1];
 
-    Function<Integer, Integer> zzz = x -> x +1;
-    Function<Integer, Integer> zzz2= x -> x +2;
+    Function<Integer, Integer> zzz = x -> x + 1;
+    Function<Integer, Integer> zzz2 = x -> x + 2;
 
     zzz.apply(10);
     zzz2.apply(12);
@@ -115,13 +115,12 @@ public class Test {
     String[][][] strings = new String[3][4][4];
     strings[1][1][1] = "asdf";
 
-    // alob strings albo lookupswitch , gdzie jest przesuniecie.// FIXME BUG
-
-
   }
 
   public long lookup_swwitch(int k) {
-    // FIXME - nieprawidlowe paddowanie !!!!!
+    String[][][] strings = new String[3][4][4];
+    strings[1][1][1] = "asdf";
+
 
     // lookupswitch
     switch (k) {
@@ -146,5 +145,13 @@ public class Test {
         break;
     }
     return new Object();
+  }
+
+  public void parameter_annotations(
+      @TestDenat(value = "asdf", part = Part.NIGHT) String request,
+      @TestDenat(value = "asdf", part = Part.NIGHT) String response
+  ) {
+
+    return;
   }
 }

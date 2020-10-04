@@ -45,8 +45,8 @@ public class DataReader {
    * @return
    */
   private Object createAndReadObject(Class<?> baseClass, ByteBuffer byteCode) {
-//    if (!byteCode.hasRemaining())
-//      return null;
+    if (!byteCode.hasRemaining())
+      throw new IllegalStateException("byteCode has no remaining bits");
     try {
       Class<?> initClass = getInitClassOrDiscriminated(baseClass, byteCode);
       Object object = initClass.getConstructor().newInstance();

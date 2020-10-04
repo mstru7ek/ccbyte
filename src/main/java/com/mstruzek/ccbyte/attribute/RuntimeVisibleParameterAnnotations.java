@@ -7,7 +7,7 @@ import com.mstruzek.ccbyte.base.attribute_info;
 
 @Discriminator(attributeName = "RuntimeVisibleParameterAnnotations")
 public class RuntimeVisibleParameterAnnotations extends attribute_info {
-  public short num_parameters;
+  public byte num_parameters;
   @ArrayLength(fieldName = "num_parameters")
   public parameter_annotation[] parameter_annotations;
 }
