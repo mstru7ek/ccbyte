@@ -1,8 +1,9 @@
-package com.mstruzek.ccbyte.template;
+package com.mstruzek.ccbyte.template.filter;
 
 import com.hubspot.jinjava.interpret.JinjavaInterpreter;
 import com.hubspot.jinjava.lib.filter.Filter;
 import com.mstruzek.ccbyte.base.Flags;
+import com.mstruzek.ccbyte.template.TemplateUtils;
 
 import java.lang.reflect.Field;
 

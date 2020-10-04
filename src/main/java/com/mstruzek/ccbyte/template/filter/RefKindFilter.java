@@ -1,4 +1,4 @@
-package com.mstruzek.ccbyte.template;
+package com.mstruzek.ccbyte.template.filter;
 
 import com.hubspot.jinjava.interpret.JinjavaInterpreter;
 import com.hubspot.jinjava.lib.filter.Filter;

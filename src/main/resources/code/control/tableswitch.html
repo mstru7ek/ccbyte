@@ -1,0 +1,35 @@
+<tr>
+    <td>{{ loop.getIndex0() }} :</td>
+    <td>{{ $className }}</td>
+    <td> { // {{ low }} to {{ high }}</td>
+    <td></td>
+</tr>
+
+{% set parentIndex = loop.getIndex0() %}
+
+{% set highClosed = high + 1 %}
+{% for match in range(low,highClosed) %}
+
+<tr class="match_offset_pair">
+    <td></td>
+    <td>{{ match }}:</td>
+    <td>{{ parentIndex + offsets[loop.getIndex0()]  }}</td>
+    <td></td>
+</tr>
+
+{% endfor %}
+
+<tr class="match_offset_pair">
+    <td></td>
+    <td>default:</td>
+    <td>{{ parentIndex + default_  }}</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td> </td>
+    <td>}</td>
+    <td></td>
+    <td></td>
+</tr>
+

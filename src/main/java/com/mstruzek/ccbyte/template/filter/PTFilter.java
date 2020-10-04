@@ -1,10 +1,10 @@
-package com.mstruzek.ccbyte.template;
+package com.mstruzek.ccbyte.template.filter;
 
 import com.google.common.collect.ImmutableMap;
 import com.hubspot.jinjava.interpret.JinjavaInterpreter;
 import com.hubspot.jinjava.lib.filter.Filter;
 
-class PTFilter implements Filter {
+public class PTFilter implements Filter {
 
   public PTFilter() {
   }

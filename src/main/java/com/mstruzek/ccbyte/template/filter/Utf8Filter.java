@@ -1,11 +1,12 @@
-package com.mstruzek.ccbyte.template;
+package com.mstruzek.ccbyte.template.filter;
 
 import com.hubspot.jinjava.interpret.JinjavaInterpreter;
 import com.hubspot.jinjava.lib.filter.Filter;
+import com.mstruzek.ccbyte.template.TemplateUtils;
 
 import java.nio.charset.StandardCharsets;
 
-class Utf8Filter implements Filter {
+public class Utf8Filter implements Filter {
 
   @Override
   public String getName() {

@@ -117,18 +117,34 @@ public class Test {
 
     // alob strings albo lookupswitch , gdzie jest przesuniecie.// FIXME BUG
 
+
+  }
+
+  public long lookup_swwitch(int k) {
     // FIXME - nieprawidlowe paddowanie !!!!!
 
     // lookupswitch
-//    switch (k) {
-//      case 120:
-//        break;
-//      case 230:
-//        break;
-//      case 1500:
-//        break;
-//      default:
-//        return;
-//    }
+    switch (k) {
+      case 120:
+        break;
+      case 230:
+        break;
+      case 1500:
+        break;
+    }
+
+    return 10l;
+  }
+
+  public Object table_switch(int k) {
+    switch (k) {
+      case 12:
+        break;
+      case 14:
+        break;
+      case 15:
+        break;
+    }
+    return new Object();
   }
 }

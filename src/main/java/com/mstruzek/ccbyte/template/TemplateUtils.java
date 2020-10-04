@@ -7,9 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-public final class TemplateUtils {
+public final class  TemplateUtils {
 
   private static final Map<Class<?>, String> templates = new HashMap<>();
 
@@ -85,6 +84,10 @@ public final class TemplateUtils {
 
   public static Integer uint(byte value) {
     return Byte.toUnsignedInt(value);
+  }
+
+  public static Object map(Object object) {
+    return ObjectAsMap.wrap(object);
   }
 
 }

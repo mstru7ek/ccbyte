@@ -1,0 +1,35 @@
+<tr>
+    <td>{{ loop.getIndex0() }} :</td>
+    <td>{{ $className }}</td>
+    <td> { // {{ npairs }}</td>
+    <td></td>
+</tr>
+
+{% set parentIndex = loop.getIndex0() %}
+
+{% for match_offset_pair in  pairs %}
+
+{% set pair = map(match_offset_pair) %}
+<tr class="match_offset_pair">
+    <td></td>
+    <td>{{ pair['match'] }}:</td>
+    <td>{{ parentIndex + pair['offset']  }}</td>
+    <td></td>
+</tr>
+
+{% endfor %}
+
+<tr class="match_offset_pair">
+    <td></td>
+    <td>default:</td>
+    <td>{{ parentIndex + default_  }}</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td> </td>
+    <td>}</td>
+    <td></td>
+    <td></td>
+</tr>
+

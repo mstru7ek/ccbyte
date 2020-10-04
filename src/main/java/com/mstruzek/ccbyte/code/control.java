@@ -25,12 +25,10 @@ public interface control {
     @ArrayLength(fieldName = "npairs")
     public match_offset_pair[] pairs;
 
-
     public static class match_offset_pair {
       public int match;
       public int offset;
     }
-
   }
   @Discriminator(byteValue = (byte)0xac) class ireturn  extends op_code {}
   @Discriminator(byteValue = (byte)0xad) class lreturn  extends op_code {}

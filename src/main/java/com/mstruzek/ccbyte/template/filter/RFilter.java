@@ -1,10 +1,11 @@
-package com.mstruzek.ccbyte.template;
+package com.mstruzek.ccbyte.template.filter;
 
 import com.hubspot.jinjava.interpret.JinjavaInterpreter;
 import com.hubspot.jinjava.lib.filter.Filter;
 import com.mstruzek.ccbyte.cpool.ConstPool;
+import com.mstruzek.ccbyte.template.TemplateUtils;
 
-class RFilter implements Filter {
+public class RFilter implements Filter {
   private final ConstPool constPool;
 
   public RFilter(ConstPool constPool) {

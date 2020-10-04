@@ -4,6 +4,7 @@ import com.hubspot.jinjava.Jinjava;
 import com.hubspot.jinjava.lib.fn.ELFunctionDefinition;
 import com.mstruzek.ccbyte.core.ClassFileLoader;
 import com.mstruzek.ccbyte.base.Flags;
+import com.mstruzek.ccbyte.template.filter.*;
 
 import static com.mstruzek.ccbyte.template.TemplateUtils.loadTemplate;
 
@@ -28,8 +29,21 @@ public class Template {
     jinjava.registerFilter(FlagsFilter.from(Flags.Parameter.class, "P"));
 
     try {
-      jinjava.registerFunction(new ELFunctionDefinition("", "box", TemplateUtils.class.getDeclaredMethod("box", Object.class)));
-      jinjava.registerFunction(new ELFunctionDefinition("", "uint", TemplateUtils.class.getDeclaredMethod("uint", byte.class)));
+      jinjava.registerFunction(new ELFunctionDefinition(
+          "",
+          "box",
+          TemplateUtils.class.getDeclaredMethod("box", Object.class)));
+
+      jinjava.registerFunction(new ELFunctionDefinition(
+          "",
+          "uint",
+          TemplateUtils.class.getDeclaredMethod("uint", byte.class)));
+
+      jinjava.registerFunction(new ELFunctionDefinition(
+          "",
+          "map",
+          TemplateUtils.class.getDeclaredMethod("map", Object.class)));
+
     } catch (NoSuchMethodException e) {
       e.printStackTrace();
     }
@@ -38,5 +52,5 @@ public class Template {
 
     return output;
   }
-  
+
 }
