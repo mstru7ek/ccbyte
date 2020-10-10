@@ -14,6 +14,7 @@ public class Template {
 
   public String process(ClassFileLoader classFileLoader) {
     jinjava.registerTag(new DispatchTag());
+    jinjava.registerTag(new RDispatchTag());
     jinjava.registerFilter(new Utf8Filter());
     jinjava.registerFilter(new RFilter(classFileLoader.constantPool()));
     jinjava.registerFilter(new TFilter(classFileLoader.constantPool()));
@@ -29,26 +30,21 @@ public class Template {
     jinjava.registerFilter(FlagsFilter.from(Flags.Parameter.class, "P"));
 
     try {
-      jinjava.registerFunction(new ELFunctionDefinition(
-          "",
-          "box",
-          TemplateUtils.class.getDeclaredMethod("box", Object.class)));
+      jinjava.registerFunction(new ELFunctionDefinition("", "box", TemplateUtils.class.getDeclaredMethod("box", Object.class)));
 
-      jinjava.registerFunction(new ELFunctionDefinition(
-          "",
-          "uint",
-          TemplateUtils.class.getDeclaredMethod("uint", byte.class)));
+      jinjava.registerFunction(new ELFunctionDefinition("", "uint", TemplateUtils.class.getDeclaredMethod("uint", byte.class)));
 
-      jinjava.registerFunction(new ELFunctionDefinition(
-          "",
-          "map",
-          TemplateUtils.class.getDeclaredMethod("map", Object.class)));
+      jinjava.registerFunction(new ELFunctionDefinition("", "map", TemplateUtils.class.getDeclaredMethod("map", Object.class)));
+
+      jinjava.registerFunction(new ELFunctionDefinition("", "toByte", TemplateUtils.class.getDeclaredMethod("toByte", Object.class)));
+
+      jinjava.registerFunction(new ELFunctionDefinition("", "toChar", TemplateUtils.class.getDeclaredMethod("toChar", Object.class)));
 
     } catch (NoSuchMethodException e) {
       e.printStackTrace();
     }
 
-    var output = jinjava.render(loadTemplate(ClassFileLoader.class), ObjectAsMap.wrap(classFileLoader));
+    var output = jinjava.render(loadTemplate(ClassFileLoader.class, false), ObjectAsMap.wrap(classFileLoader));
 
     return output;
   }

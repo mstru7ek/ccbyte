@@ -1,8 +1,5 @@
-<div class="parameter_annotation">
-	<h4>parameter_annotation</h4>
-	<div class="annotations">
-	{% for annotation in annotations %}
-		{% dispatch annotation %}
-	{% endfor %}
-	</div>
-</div>
+{% for annotation in annotations %}
+    {% set sh = sh + 1 %}
+    {% dispatch annotation %}
+    {% set sh = sh - 1 %}
+{% endfor %}

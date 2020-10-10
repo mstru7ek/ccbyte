@@ -11,24 +11,31 @@ import java.util.Map;
 public final class  TemplateUtils {
 
   private static final Map<Class<?>, String> templates = new HashMap<>();
+  private static final Map<Class<?>, String> templatesR = new HashMap<>();
 
   private TemplateUtils() {
   }
 
-  public static String loadTemplate(Class<?> templateClass) {
+  public static String loadTemplate(Class<?> aClass, boolean templateR) {
+    return templateR
+        ? loadTemplate(templatesR, ".R", aClass)
+        : loadTemplate(templates, "", aClass);
+  }
+
+  private static String loadTemplate(Map<Class<?>, String> templates, String postfix, Class<?> templateClass) {
     if (templates.get(templateClass) == null) {
-      var templateBody = doLoadTemplate(templateClass);
+      var templateBody = doLoadTemplate(templateClass, postfix);
       templates.put(templateClass, templateBody);
     }
     return templates.get(templateClass);
   }
 
-  private static String doLoadTemplate(Class<?> templateClass) {
-    var file = getFileName(templateClass);
+  private static String doLoadTemplate(Class<?> templateClass, String postfix) {
+    var file = getFileName(templateClass, postfix);
     try {
       URL resource = ClassLoader.getSystemClassLoader().getResource(file);
       if (resource == null) {
-        resource = ClassLoader.getSystemClassLoader().getResource(getFileName(templateClass.getSuperclass()));
+        resource = ClassLoader.getSystemClassLoader().getResource(getFileName(templateClass.getSuperclass(), postfix));
         if (resource == null) {
           throw new RuntimeException(String.format("resource not found: %s", file));
         }
@@ -41,8 +48,8 @@ public final class  TemplateUtils {
     }
   }
 
-  private static String getFileName(Class<?> templateClass) {
-    return templateClass.getName().substring("com.mstruzek.ccbyte".length() + 1).replace(".", "/").replace("$", "/").concat(".html");
+  private static String getFileName(Class<?> templateClass, String postfix) {
+    return templateClass.getName().substring("com.mstruzek.ccbyte".length() + 1).replace(".", "/").replace("$", "/").concat(postfix).concat(".html");
   }
 
   public static Object[] box(Object object) {
@@ -52,6 +59,22 @@ public final class  TemplateUtils {
       return (Object[]) object;
     }
     throw new IllegalStateException("object is not an array");
+  }
+
+  public static Byte toByte(Object object) {
+    if (object instanceof String) {
+      return (byte)((String) object).charAt(0);
+    } else if (object instanceof Character) {
+      return (byte) ((Character)object).charValue();
+    }
+    throw new IllegalStateException("object is not convertible to byte");
+  }
+
+  public static Character toChar(Object object) {
+    if (object instanceof Byte) {
+      return (char)((Byte) object).byteValue();
+    }
+    throw new IllegalStateException("object is not convertible to char");
   }
 
   public static Object[] boxedArray(Object array) {
@@ -89,5 +112,4 @@ public final class  TemplateUtils {
   public static Object map(Object object) {
     return ObjectAsMap.wrap(object);
   }
-
 }

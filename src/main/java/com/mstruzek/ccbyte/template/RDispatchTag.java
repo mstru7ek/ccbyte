@@ -18,12 +18,13 @@ import com.hubspot.jinjava.tree.TagNode;
         @JinjavaSnippet(code = "{% dispatch object %} ")
     }
 )
-public class DispatchTag implements Tag {
+public class RDispatchTag implements Tag {
 
-  public static final String TAG_NAME = "dispatch";
+  public static final String TAG_NAME = "r_dispatch";
 
   @Override
   public String interpret(TagNode tagNode, JinjavaInterpreter interpreter) {
+
     var object = interpreter.resolveELExpression(tagNode.getHelpers(), tagNode.getLineNumber());
     if (object == null) {
       return "";
@@ -31,7 +32,7 @@ public class DispatchTag implements Tag {
     var sb = new StringBuilder();
     try (JinjavaInterpreter.InterpreterScopeClosable scope = interpreter.enterScope()) {
       interpreter.getContext().putAll(ObjectAsMap.wrap(object));
-      var templateCode = TemplateUtils.loadTemplate(object.getClass(), false);
+      var templateCode = TemplateUtils.loadTemplate(object.getClass(), true);
       sb.append(interpreter.render(templateCode));
     } catch (Exception e) {
       throw new InterpretException(e.getMessage(), e, tagNode.getLineNumber(), tagNode.getStartPosition());

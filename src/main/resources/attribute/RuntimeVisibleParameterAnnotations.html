@@ -1,8 +1,18 @@
-<div class="RuntimeVisibleParameterAnnotations">
+<section class="RuntimeVisibleParameterAnnotations">
 	<h4>RuntimeVisibleParameterAnnotations</h4>
-	<div class="parameter_annotations">
-	{% for parameter_annotation in parameter_annotations %}
-		{% dispatch  parameter_annotation %}
-	{% endfor %}
-	</div>
-</div>
+
+	<table>
+		<tbody>
+
+		{% for parameter_annotation in parameter_annotations %}
+
+			{% set sh = 0 %}
+			<tr>
+				<td></td>
+				<td class="sh-{{ sh }}"><b>parameter {{ loop.getIndex0() }}:</b></td>
+			</tr>
+			{% dispatch parameter_annotation %}
+		{% endfor %}
+		</tbody>
+	</table>
+</section>

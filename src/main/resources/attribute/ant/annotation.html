@@ -1,9 +1,27 @@
-<div class="annotation">
-    <h4>Annotation</h4>
-    <div class="type_index"><span>type_index: </span><span>{{ type_index |R }}</span></div>
-    <div class="element_value_pairs">
-        {% for element_value_pair in element_value_pairs %}
-            {% dispatch element_value_pair %}
-        {% endfor %}
-    </div>
-</div>
+{% if sh == 1 %}
+<tr>
+    <td></td>
+    <td class="sh-{{ sh }}">
+        {{ loop.getIndex0() }}: #{{ type_index }}({% for element_value_pair in element_value_pairs %}{% r_dispatch element_value_pair %},{% endfor %})
+    </td>
+</tr>
+{% endif %}
+{% set sh = sh + 1 %}
+<tr>
+    <td></td>
+    <td class="sh-{{ sh }}">{{ type_index|R }}(</td>
+</tr>
+
+{% set sh = sh + 1 %}
+{% for element_value_pair in element_value_pairs %}
+<tr>
+    <td></td>
+    <td class="sh-{{ sh }}"> {% dispatch element_value_pair %} </td>
+</tr>
+{% endfor %}
+{% set sh = sh - 1 %}
+<tr>
+    <td></td>
+    <td class="sh-{{ sh }}"> ) </td>
+</tr>
+{% set sh = sh - 1 %}

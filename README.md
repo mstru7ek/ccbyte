@@ -36,11 +36,11 @@ MUST adhere to JVM Specification Java SE 14 / disassembler
 | ModulePackages                           |   #   |              
 | NestHost                                 |   +   |          
 | NestMembers                              |   +   |              
-| RuntimeInvisibleAnnotations              |   %   |                              
-| RuntimeInvisibleParameterAnnotations     |   %   |                                      
+| RuntimeInvisibleAnnotations              |   +   |                              
+| RuntimeInvisibleParameterAnnotations     |   +   |                                      
 | RuntimeInvisibleTypeAnnotations          |   %   |                                  
-| RuntimeVisibleAnnotations                |   %   |                          
-| RuntimeVisibleParameterAnnotations       |   %   |                                  
+| RuntimeVisibleAnnotations                |   +   |                          
+| RuntimeVisibleParameterAnnotations       |   +   |                                  
 | RuntimeVisibleTypeAnnotations            |   %   |                              
 | Signature                                |   +   |          
 | SourceDebugExtension                     |   +   |                      

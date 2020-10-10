@@ -145,3 +145,22 @@ tr.match_offset_pair > td:nth-child(2) {
     text-align: right;
     padding-right: 10px
 }
+
+
+section.RuntimeVisibleAnnotations table {}
+section.RuntimeVisibleParameterAnnotations table {}
+section.RuntimeInvisibleAnnotations table {}
+section.RuntimeInvisibleParameterAnnotations table {}
+
+.sh-0 { padding-left:  0px; }
+.sh-1 { padding-left: 10px; }
+.sh-2 { padding-left: 20px; }
+.sh-3 { padding-left: 30px; }
+.sh-4 { padding-left: 40px; }
+.sh-5 { padding-left: 50px; }
+.sh-6 { padding-left: 60px; }
+.sh-7 { padding-left: 70px; }
+.sh-8 { padding-left: 80px; }
+.sh-9 { padding-left: 90px; }
+.sh-10 { padding-left: 100px; }
+.sh-11 { padding-left: 110px; }

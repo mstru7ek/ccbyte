@@ -1,7 +1,1 @@
-<div class="element_value_pair">
-    <h4>element_value_pair</h4>
-    <div class="element_name_index"><span>element_name_index: </span><span>{{ element_name_index |R }}</span></div>
-    <div class="value">
-        {% dispatch value %}
-    </div>
-</div>
+{{ element_name_index |R }}={% dispatch value %}

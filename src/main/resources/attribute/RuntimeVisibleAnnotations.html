@@ -1,8 +1,12 @@
-<div class="RuntimeVisibleAnnotations">
+<section class="RuntimeVisibleAnnotations">
     <h4>RuntimeVisibleAnnotations</h4>
-    <div class="annotations">
-    {% for annotation in annotations %}
-        {% dispatch annotation %}
-    {% endfor %}
-    </div>
-</div>
+
+    <table>
+        <tbody>
+        {% for annotation in annotations %}
+            {% set sh = 1 %}
+            {% dispatch annotation %}
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
